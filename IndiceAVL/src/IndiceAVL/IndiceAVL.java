@@ -58,7 +58,7 @@ public static void main(String[] args) throws IOException {
                 for (int i = 0; i < textoFichero.length; i=i+3) {
                     String ContenidoPalabra[] = textoFichero[i].split(",");
                     System.out.println(ContenidoPalabra[0]);
-                    arbol.insertar(Integer.parseInt(ContenidoPalabra[0]));
+                    //arbol.insertar(Integer.parseInt(ContenidoPalabra[0]));
                     System.out.println(textoFichero[i]);
                 }
 
@@ -86,6 +86,18 @@ public static void main(String[] args) throws IOException {
                     for (int i = 0; i < textoFichero.length; i++) {
                     String ContenidoPalabra[] = textoFichero[i].split(",");
                     System.out.println(textoFichero[i]);
+                    if(s.equals(ContenidoPalabra[2])){
+                        String materiasFichero[] = materias.getNombre();
+                        for (int j = 0; j < materiasFichero.length; j++) {
+                            String numero[] = materiasFichero[j].split(",");
+                            if(ContenidoPalabra[2].equals(materiasFichero[j])){
+                                System.out.println(materiasFichero[j+1]);;
+                            }
+                            
+                            
+                        }
+                    
+                    }
                 }
             }catch(Exception e){
                     System.out.println("Datos de ingreso no validos");
