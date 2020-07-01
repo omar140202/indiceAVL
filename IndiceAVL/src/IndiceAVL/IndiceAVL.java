@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 public class IndiceAVL extends JFrame implements ActionListener{
@@ -19,6 +21,20 @@ public class IndiceAVL extends JFrame implements ActionListener{
     JButton botonIngresoEstudiante = new JButton("Ingresar Estudiante");
     JButton botonIngresoMateria = new JButton("Ingresar Materia");
     JButton botonConsultar = new JButton("Consultar");
+    
+    JLabel texto1 = new JLabel("Datos Estudiantes.");
+    JLabel texto2 = new JLabel("Datos Materias.");
+    JLabel texto3 = new JLabel("Codigo Estudiante :");
+    JLabel texto4 = new JLabel("Nombre Estudiante:");
+    JLabel texto5 = new JLabel("Materias:");
+    JLabel texto6 = new JLabel("Codigo Materia: ");
+    JLabel texto7 = new JLabel("Nombre Materia: ");
+    
+    JTextField codEst = new JTextField();
+    JTextField nomEst = new JTextField();
+    JTextField matEst = new JTextField();
+    JTextField codMat = new JTextField();
+    JTextField nomMat = new JTextField();
     
     JScrollPane scrollPane = new JScrollPane();
     JScrollPane scrollPane1 = new JScrollPane();
@@ -30,7 +46,98 @@ public class IndiceAVL extends JFrame implements ActionListener{
         indiceAVL.setTitle("Materias Cursores/AVL");
         indiceAVL.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         indiceAVL.setVisible(true);   
+
+    }
+
+    public IndiceAVL(){
         
+        Container c = getContentPane();
+        c.setLayout(null);
+        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        
+        c.add(botonCrear);
+        c.add(botonIngresoEstudiante);
+        c.add(botonIngresoMateria);
+        c.add(botonConsultar);
+        
+        c.add(texto1);
+        c.add(texto2);
+        c.add(texto3);
+        c.add(texto4);
+        c.add(texto5);
+        c.add(texto6);
+        c.add(texto7);
+        
+        c.add(codEst);
+        c.add(nomEst);
+        c.add(matEst);
+        c.add(codMat);
+        c.add(nomMat);
+        
+        c.add(scrollPane1);
+        
+        texto1.setBounds(70, 10, 200, 30);
+        texto2.setBounds(300, 10, 200, 30);
+        texto3.setBounds(5, 50, 200, 30);
+        texto4.setBounds(5, 90, 200, 30);
+        texto5.setBounds(5, 130, 200, 30);
+        texto6.setBounds(250, 50, 200, 30);
+        texto7.setBounds(250, 90, 200, 30);
+        
+        codEst.setBounds(120, 55, 100, 20);
+        nomEst.setBounds(120, 95, 100, 20);
+        matEst.setBounds(70, 135, 150, 20);
+        
+        codMat.setBounds(350, 55, 100, 20);
+        nomMat.setBounds(350, 95, 100, 20);
+        
+        botonCrear.setBounds(500, 120, 150, 30);
+        botonCrear.addActionListener(this);
+        botonCrear.setBackground(Color.CYAN);
+        
+        botonIngresoEstudiante.setBounds(5, 170, 215, 30);
+        botonIngresoEstudiante.addActionListener(this);
+        botonIngresoEstudiante.setBackground(Color.GREEN);
+        
+        botonIngresoMateria.setBounds(250, 170, 200, 30);
+        botonIngresoMateria.addActionListener(this);
+        botonIngresoMateria.setBackground(Color.YELLOW);
+        
+        botonConsultar.setBounds(500, 170, 150, 30);
+        botonConsultar.addActionListener(this);
+        botonConsultar.setBackground(Color.ORANGE);
+        
+        scrollPane.setBounds(2, 220, 2500, 2500);
+        scrollPane.setPreferredSize(new Dimension(2500, 2500));  
+        scrollPane.setBackground(Color.LIGHT_GRAY);
+        
+        scrollPane1.setBounds(2, 220, 680, 430);
+        scrollPane1.setPreferredSize(new Dimension(680, 400));
+        scrollPane1.setBackground(Color.BLUE);
+        
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    
+        if(e.getSource() == botonCrear){
+            
+            
+            
+        } else if (e.getSource() == botonConsultar){
+        
+            scrollPane.removeAll();
+         
+            scrollPane.repaint();
+            
+            scrollPane1.setViewportView(scrollPane);
+            
+        }
+        
+    }
+
+}
+    
 //        ArbolAVL arbol = new ArbolAVL();
 //        Cursor materias = new Cursor();
 //        materias.setRuta("materias.txt");
@@ -165,66 +272,4 @@ public class IndiceAVL extends JFrame implements ActionListener{
 //
 //        }
 
-    }
-
-    public IndiceAVL(){
-        
-        Container c = getContentPane();
-        c.setLayout(null);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
-        
-        c.add(botonCrear);
-        c.add(botonIngresoEstudiante);
-        c.add(botonIngresoMateria);
-        c.add(botonConsultar);
-        
-        c.add(scrollPane1);
-        
-        botonCrear.setBounds(500, 20, 150, 30);
-        botonCrear.addActionListener(this);
-        botonCrear.setBackground(Color.CYAN);
-        
-        botonIngresoEstudiante.setBounds(500, 70, 150, 30);
-        botonIngresoEstudiante.addActionListener(this);
-        botonIngresoEstudiante.setBackground(Color.GREEN);
-        
-        botonIngresoMateria.setBounds(500, 120, 150, 30);
-        botonIngresoMateria.addActionListener(this);
-        botonIngresoMateria.setBackground(Color.YELLOW);
-        
-        botonConsultar.setBounds(500, 170, 150, 30);
-        botonConsultar.addActionListener(this);
-        botonConsultar.setBackground(Color.ORANGE);
-        
-        scrollPane.setBounds(2, 220, 2500, 2500);
-        scrollPane.setPreferredSize(new Dimension(2500, 2500));  
-        scrollPane.setBackground(Color.LIGHT_GRAY);
-        
-        scrollPane1.setBounds(2, 220, 680, 430);
-        scrollPane1.setPreferredSize(new Dimension(680, 400));
-        scrollPane1.setBackground(Color.BLUE);
-        
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-    
-        if(e.getSource() == botonCrear){
-            
-            
-            
-        } else if (e.getSource() == botonConsultar){
-        
-            scrollPane.removeAll();
-         
-            scrollPane.repaint();
-            
-            scrollPane1.setViewportView(scrollPane);
-            
-        }
-        
-    }
-
-}
-    
 
