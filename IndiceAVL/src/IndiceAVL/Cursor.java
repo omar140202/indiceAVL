@@ -42,8 +42,6 @@ public class Cursor {
             izq[0]=0;
             nombre[0] = vacio;
 
-
-
             for (int i = 1; i < 20; i++) {
                     der[i] = i+1;
                     nombre[i] = vacio;
